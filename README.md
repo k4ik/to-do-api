@@ -1,5 +1,4 @@
 # To Do API
-
 A simple API for managing tasks, developed with PHP, MySQL and Docker. This API allows you to create, read, update, and delete tasks.
 
 ## Prerequisites
@@ -69,5 +68,4 @@ The API offers the following endpoints:
 - URL: ``http://localhost:8080/tasks/:id``
 
 ## Contribution
-
 Contributions are welcome! Feel free to submit a pull request or open an issue.
