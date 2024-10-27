@@ -7,6 +7,7 @@ on:
   pull_request:
     branches:
       - master  
+
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -37,6 +38,15 @@ jobs:
 
       - name: Install dependencies
         run: composer install
+
+      - name: Set up environment
+        run: cp .env.example .env
+      
+      - name: Wait for MySQL to be ready
+        run: |
+          while ! mysqladmin ping -h127.0.0.1 -uroot -proot --silent; do
+            sleep 1
+          done
 
       - name: Run tests
         env:
